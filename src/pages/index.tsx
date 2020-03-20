@@ -10,7 +10,7 @@ class Index extends React.Component {
     return (
       <Page>
         <div>
-          <h1>
+          <h2 style={{ marginTop: 80, marginBottom: 80 }}>
             {/* Life is simpler with thoughtful software. */}
             Ben is a software designer and engineer. Currently creating useful
             products at{" "}
@@ -22,7 +22,7 @@ class Index extends React.Component {
               Deutsche Bank
             </a>
             .
-          </h1>
+          </h2>
           <ul>
             {posts.map(post => (
               <li key={post.node.fields.slug}>

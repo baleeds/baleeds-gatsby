@@ -16,7 +16,9 @@ export const Page: React.FC = ({ children }) => {
 
 const Container = styled.div`
   width: 100%;
-  max-width: 700px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
 `;
 
 const Main = styled.div``;

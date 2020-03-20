@@ -21,9 +21,9 @@ export const Footer: React.FC = () => {
 
 const Container = styled.div`
   border-top: 1px solid ${theme.colors.border};
-  padding: 12px 0px;
+  padding: 10px 0px;
   display: flex;
   justify-content: space-between;
   align-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 `;

@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
 
 const Container = styled.div`
   border-bottom: 1px solid ${theme.colors.border};
-  padding: 12px 0px;
+  padding: 20px 0px;
   display: flex;
   justify-content: space-between;
   align-content: center;
