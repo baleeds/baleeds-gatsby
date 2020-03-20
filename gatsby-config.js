@@ -16,12 +16,6 @@ module.exports = {
         name: `pages`
       }
     },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography.js`
-      }
-    },
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
@@ -75,6 +69,18 @@ module.exports = {
         excludeRegex: /excluded-link/
       }
     },
-    `gatsby-plugin-glamor`
+    `gatsby-plugin-glamor`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: true
+      }
+    },
+    {
+      resolve: `gatsby-plugin-typescript`,
+      option: {
+        isTSX: true
+      }
+    }
   ]
 };

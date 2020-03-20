@@ -3,10 +3,8 @@ import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
 import rehypeReact from "rehype-react";
 
-import styles from "../styles";
 import Counter from "../components/Counter";
-import Layout from "../layouts";
-import { rhythm, scale } from "../utils/typography";
+import Page from "../layouts/Page";
 
 import "katex/dist/katex.min.css";
 
@@ -32,91 +30,35 @@ class BlogPostRoute extends React.Component {
           </span>
         );
       });
-      tagsSection = (
-        <span
-          css={{
-            fontStyle: `normal`,
-            textAlign: `left`
-          }}
-        >
-          tagged {tags}
-        </span>
-      );
+      tagsSection = <span>tagged {tags}</span>;
     }
 
     return (
-      <Layout location={this.props.location}>
-        <div
-          css={{
-            maxWidth: rhythm(26)
-          }}
-        >
+      <Page location={this.props.location}>
+        <div>
           <header>
-            <h1
-              css={{
-                marginBottom: rhythm(1 / 6),
-                color: post.frontmatter.shadow
-              }}
-            >
-              {post.frontmatter.title}
-            </h1>
-            <p
-              css={{
-                ...scale(-1 / 5),
-                display: `block`,
-                color: `${styles.colors.light}`
-              }}
-            >
+            <h1>{post.frontmatter.title}</h1>
+            <p>
               {post.timeToRead} min read &middot; {tagsSection}
             </p>
           </header>
 
           {renderAst(post.htmlAst)}
-          <hr
-            css={{
-              marginBottom: rhythm(1),
-              marginTop: rhythm(2)
-            }}
-          />
-          <p
-            css={{
-              marginBottom: rhythm(4 / 4),
-              display: `flex`,
-              alignItems: `center`
-            }}
-          >
+          <hr />
+          <p>
             <Img
               alt={`Avatar of ${post.frontmatter.author.id}`}
               fixed={post.frontmatter.author.avatar.children[0].fixed}
-              css={{
-                borderRadius: `100%`,
-                float: `left`,
-                marginRight: rhythm(3 / 4),
-                marginBottom: 0
-              }}
               Tag="span"
             />
-            <span
-              css={{
-                color: styles.colors.light,
-                ...scale(-1 / 5)
-              }}
-            >
-              <small
-                css={{
-                  fontWeight: `bold`,
-                  color: styles.colors.text,
-                  textTransform: `uppercase`
-                }}
-              >
-                {post.frontmatter.author.id}
-              </small>
+            <span>
+              <small>{post.frontmatter.author.id}</small>
               {` `}
               {post.frontmatter.author.bio}
             </span>
           </p>
         </div>
-      </Layout>
+      </Page>
     );
   }
 }

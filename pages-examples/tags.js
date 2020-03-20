@@ -1,21 +1,21 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import Layout from "../layouts"
-import kebabCase from "lodash/kebabCase"
+import React from "react";
+import { Link, graphql } from "gatsby";
+import Page from "../layouts/Page";
+import kebabCase from "lodash/kebabCase";
 
 class TagsPageRoute extends React.Component {
   render() {
-    const allTags = this.props.data.allMarkdownRemark.group
+    const allTags = this.props.data.allMarkdownRemark.group;
 
     return (
-      <Layout location={this.props.location}>
+      <Page location={this.props.location}>
         <h1>Tags</h1>
         <ul>
           {allTags.map(tag => (
             <li key={tag.fieldValue}>
               <Link
                 style={{
-                  textDecoration: `none`,
+                  textDecoration: `none`
                 }}
                 to={`/tags/${kebabCase(tag.fieldValue)}/`}
               >
@@ -24,12 +24,12 @@ class TagsPageRoute extends React.Component {
             </li>
           ))}
         </ul>
-      </Layout>
-    )
+      </Page>
+    );
   }
 }
 
-export default TagsPageRoute
+export default TagsPageRoute;
 
 export const pageQuery = graphql`
   query {
@@ -48,4 +48,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
