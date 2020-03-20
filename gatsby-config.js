@@ -1,66 +1,80 @@
 module.exports = {
   siteMetadata: {
-    title: `Novela by Narative`,
-    name: `Narative`,
-    siteUrl: `https://novela.narative.co`,
-    description: `This is my description that will be used in the meta tags and important for search results`,
-    hero: {
-      heading: `Welcome to Novela, the simplest way to start publishing with Gatsby.`,
-      maxWidth: 652,
-    },
-    social: [
-      {
-        name: `twitter`,
-        url: `https://twitter.com/narative`,
-      },
-      {
-        name: `github`,
-        url: `https://github.com/narative`,
-      },
-      {
-        name: `instagram`,
-        url: `https://instagram.com/narative.co`,
-      },
-      {
-        name: `linkedin`,
-        url: `https://www.linkedin.com/company/narative/`,
-      },
-      {
-        name: `dribbble`,
-        url: `https://dribbble.com/narativestudio`,
-      },
-    ],
+    title: `Benjamin Leeds - UX | Engineering`,
+    author: `Benjamin Leeds`,
+    description: `Benjamin Leeds is a software engineer and user experience designer.`,
+    homepage: `https://baleeds.com`
+  },
+  mapping: {
+    "MarkdownRemark.frontmatter.author": `AuthorYaml`
   },
   plugins: [
     {
-      resolve: "@narative/gatsby-theme-novela",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        contentPosts: "content/posts",
-        contentAuthors: "content/authors",
-        basePath: "/",
-        authorsPage: true,
-        sources: {
-          local: true,
-          // contentful: true,
-        },
-      },
+        path: `${__dirname}/src/pages`,
+        name: `pages`
+      }
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-plugin-typography`,
       options: {
-        name: `Novela by Narative`,
-        short_name: `Novela`,
-        start_url: `/`,
-        background_color: `#fff`,
-        theme_color: `#fff`,
-        display: `standalone`,
-        icon: `src/assets/favicon.png`,
-      },
+        pathToConfigModule: `src/utils/typography.js`
+      }
     },
+    `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-plugin-netlify-cms`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-      },
+        gfm: true,
+        commonmark: true,
+        footnotes: true,
+        pedantic: true,
+        // blocks: ["h2"], Blocks option value can be provided here as an array.
+        excerpt_separator: `<!-- end -->`,
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 740
+            }
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
+          },
+          `gatsby-remark-copy-linked-files`,
+          {
+            resolve: `gatsby-remark-smartypants`,
+            options: {
+              dashes: `oldschool`
+            }
+          },
+          {
+            resolve: `gatsby-remark-embed-snippet`,
+            options: {
+              // Example code links are relative to this dir.
+              directory: `${__dirname}/src/code-examples/`
+            }
+          },
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-graphviz`, // graphviz before prismjs
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-katex`
+        ]
+      }
     },
-  ],
+    `gatsby-transformer-yaml`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-catch-links`,
+      options: {
+        // Links are relative to this directory
+        excludeRegex: /excluded-link/
+      }
+    },
+    `gatsby-plugin-glamor`
+  ]
 };
