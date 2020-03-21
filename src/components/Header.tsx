@@ -6,23 +6,11 @@ import { useStaticQuery, graphql } from "gatsby";
 import { Socials } from "./Socials";
 
 export const Header: React.FC = () => {
-  const { site } = useStaticQuery(graphql`
-    query {
-      site {
-        host
-        port
-      }
-    }
-  `);
-
-  const { host, port } = site;
-  const root = `${location.protocol}//${host}${port ? `:${port}` : undefined}`;
-
   return (
     <Fixed>
       <Centered>
         <Container>
-          <Brand href={root}>Benjamin Leeds</Brand>
+          <Brand href="/">Benjamin Leeds</Brand>
           <Socials />
         </Container>
       </Centered>
