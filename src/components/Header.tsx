@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { theme } from "../styles/theme";
 import { Brand } from "./Brand";
 import { useStaticQuery, graphql } from "gatsby";
+import { Socials } from "./Socials";
 
 export const Header: React.FC = () => {
   const { site } = useStaticQuery(graphql`
@@ -22,14 +23,7 @@ export const Header: React.FC = () => {
       <Centered>
         <Container>
           <Brand href={root}>Benjamin Leeds</Brand>
-          <div>
-            <a href="https://github.com/baleeds" target="blank">
-              Github
-            </a>
-            <a href="https://linkedin.com/in/baleeds" target="blank">
-              LinkedIn
-            </a>
-          </div>
+          <Socials />
         </Container>
       </Centered>
     </Fixed>
