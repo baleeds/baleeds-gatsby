@@ -46,8 +46,8 @@ p {
   font-size: 1rem;
   font-size: 0.875em;
   font-weight: normal;
-  line-height: 1.4em;
-  margin-bottom: 12px;
+  line-height: 1.8em;
+  margin-bottom: 12px !important;
   max-width: 700px;
   margin: 0 auto;
 }
@@ -61,15 +61,6 @@ a:hover {
   text-decoration: underline;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
 .text-block {
   max-width: 700px;
   margin: 0 auto;
