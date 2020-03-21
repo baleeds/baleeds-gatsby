@@ -43,13 +43,17 @@ h6 {
 }
 
 p {
-  font-size: 1rem;
   font-size: 0.875em;
   font-weight: normal;
   line-height: 1.8em;
   margin-bottom: 12px !important;
-  max-width: 700px;
-  margin: 0 auto;
+}
+
+ul li {
+  list-style: inside;
+  font-size: 0.875em;
+  font-weight: normal;
+  line-height: 1.8em;
 }
 
 a {
@@ -64,4 +68,38 @@ a:hover {
 .text-block {
   max-width: 700px;
   margin: 0 auto;
+}
+
+.formatted h1,
+.formatted h2,
+.formatted h3,
+.formatted h4 {
+  max-width: 700px;
+  margin: 80px auto 12px auto;
+}
+
+.formatted h4,
+.formatted h5,
+.formatted h6,
+.formatted p,
+.formatted ol,
+.formatted ul {
+  margin: 24px auto 12px auto;
+  max-width: 700px;
+}
+
+.formatted .gatsby-resp-image-wrapper {
+  margin: 40px 0;
+}
+
+.formatted {
+  margin-bottom: 200px;
+}
+
+.formatted figcaption {
+  margin-top: -20px;
+  opacity: 0.6;
+  font-size: 0.8em;
+  text-align: center;
+  font-style: italic;
 }

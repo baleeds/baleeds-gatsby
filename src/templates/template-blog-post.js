@@ -4,7 +4,13 @@ import rehypeReact from "rehype-react";
 import { Page } from "../layouts/Page";
 
 const renderAst = new rehypeReact({
-  createElement: React.createElement
+  createElement: React.createElement,
+  components: {
+    Sub: ({ children }) => {
+      console.log("sup", children);
+      return <h3>{children}</h3>;
+    }
+  }
 }).Compiler;
 
 class BlogPostRoute extends React.Component {
@@ -13,13 +19,12 @@ class BlogPostRoute extends React.Component {
 
     return (
       <Page location={this.props.location}>
-        <div>
+        <div className="formatted">
           <header>
             <h1>{post.frontmatter.title}</h1>
           </header>
 
           {renderAst(post.htmlAst)}
-          <hr />
         </div>
       </Page>
     );

@@ -19,5 +19,4 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-content: center;
-  margin-bottom: 80px;
 `;

@@ -17,7 +17,9 @@ Notification Dock is a platform-wide solution for notifying users from all of th
 
 As the lead UXD on the project, I took the Dock through the full UX design process, including user research, wireframing, prototyping, user testing, development support, and iteration.
 
-![](new-dock.png) The redesigned Notification Dock.
+![](new-dock.png)
+
+<figcaption>The redesigned notifcation dock.</figcaption>
 
 ## User research
 
@@ -31,27 +33,39 @@ The primary delivery was a breakdown of projected user demographics, and how the
 
 The stakeholders and I went through multiple iterations of wireframes before being satisfied with the offering.
 
-![](dock-wires-original.png) The first round of wireframes added archives and RAG status sorting.
+![](dock-wires-original.png)
+
+<figcaption>The first round of wireframes added archives and RAG status sorting.</figcaption>
 
 One major issue with the original design for grouping notifications by subject, which was a critical requirement, was that it reduced the scan-ability of notifications, especially when groups mixed with singles.
 
-![](dock-wires-original-1.png) It's hard to tell where the groups begin and end.
+![](dock-wires-original-1.png)
 
-![](dock-wires-notification-transition.png) The final layout took a few iterations.
+<figcaption>It's hard to tell where the groups begin and end.</figcaption>
+
+![](dock-wires-notification-transition.png)
+
+<figcaption>The final layout took a few iterations.</figcaption>
 
 The long priority status bars on the left were causing the notifications to blend, so I started by changing to a smaller indicator.  Then moving the source in with the subject helped reduce the overall size and visual complexity.
 
 After rearranging the notifications, I refined and condensed the controls on the top of the notifier, including recent/archive, priorities, and search.
 
-![](notifier-wireframe-2.png) Condensing the visual complexity gives more room and attention for notifications.
+![](notifier-wireframe-2.png)
 
-![](notifier-wireframe-1.png) Outlining the anatomy of each notification group.
+<figcaption>Condensing the visual complexity gives more room and attention for notifications.</figcaption>
+
+![](notifier-wireframe-1.png)
+
+<figcaption>Outlining the anatomy of each notification group.</figcaption>
 
 ## High fidelity designs
 
 Following the wireframes, my plan was to put together a fully functional prototype, so I needed a high fidelity design to follow.  The design language is derived from a next generation concept for the Command Center, where users keep their relevant applications.
 
-![](new-dock.png) High fidelity designs added extra visual cues to increase the usability of the Dock.
+![](new-dock.png)
+
+<figcaption>High fidelity designs added extra visual cues to increase the usability of the Dock.</figcaption>
 
 ## Creating a prototype
 

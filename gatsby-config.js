@@ -17,6 +17,7 @@ module.exports = {
       }
     },
     `gatsby-transformer-sharp`,
+    `gatsby-remark-unwrap-images`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -27,10 +28,12 @@ module.exports = {
         // blocks: ["h2"], Blocks option value can be provided here as an array.
         excerpt_separator: `<!-- end -->`,
         plugins: [
+          `gatsby-remark-unwrap-images`,
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 740
+              maxWidth: 900
+              // wrapperStyle: () => `margin: unset`
             }
           },
           {
