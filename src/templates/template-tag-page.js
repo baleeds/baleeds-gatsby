@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import Page from "../layouts/Page";
+import { Page } from "../layouts/Page";
 
 class TagRoute extends React.Component {
   render() {
