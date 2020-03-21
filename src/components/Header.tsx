@@ -36,6 +36,7 @@ const Fixed = styled.div`
   right: 0px;
   left: 0px;
   background: white;
+  z-index: 1;
 `;
 
 const Centered = styled.div`

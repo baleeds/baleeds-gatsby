@@ -3,6 +3,7 @@ title: "Visdocs"
 date: "2020-03-20"
 draft: false
 author: Benjamin Leeds
+featuredImage: login-render.png
 tags:
   - UX
   - Visual Design
@@ -17,7 +18,7 @@ Managing IT assets is hard work, which means that troubleshooting IT mishaps is 
 
 As the founding UX and UI designer (and frontend engineer), my goal was to go from nothing to something game-changing. Working alongside experts and up-and-comers in the industry, we developed a feature-set to solve 3 primary problems, and then brought those features through wireframes, visual design, and technical implementation.
 
-![](login-render@2x.png) Visdocs' login screen
+![](login-render.png) Visdocs' login screen
 
 ## User research
 

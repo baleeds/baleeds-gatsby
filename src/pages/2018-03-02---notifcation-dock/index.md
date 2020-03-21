@@ -3,6 +3,7 @@ title: "Notification Dock"
 date: "2018-03-02"
 draft: false
 author: Benjamin Leeds
+featuredImage: new-dock.png
 tags:
   - UX
   - Visual Design

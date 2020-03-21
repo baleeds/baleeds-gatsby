@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby";
 import { Page } from "../layouts/Page";
 import styled from "styled-components";
 import { theme } from "../styles/theme";
+import Img from "gatsby-image";
 
 class Index extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class Index extends React.Component {
 
     return (
       <Page>
-        <Section style={{ margin: "60px 0" }}>
+        <Section style={{ margin: "120px 0" }}>
           <h2>
             {/* Life is simpler with thoughtful software. */}
             Ben is a software designer and engineer. Currently creating useful
@@ -31,31 +32,34 @@ class Index extends React.Component {
         <h3>Featured work</h3>
         <Section>
           {posts.map(post => (
-            <>
-              <FlexBlock>
-                <Card key={post.node.fields.slug}>
-                  <CardBody>
-                    <Link to={post.node.fields.slug} className="link-underline">
-                      <h3>{post.node.frontmatter.title}</h3>
-                    </Link>
-                    <p>{post.node.excerpt}</p>
-                  </CardBody>
-                </Card>
-              </FlexBlock>
-              <FlexBlock>
-                <Card key={post.node.fields.slug}>
-                  <CardBody>
-                    <Link to={post.node.fields.slug} className="link-underline">
-                      <h3>{post.node.frontmatter.title}</h3>
-                    </Link>
-                    <p>{post.node.excerpt}</p>
-                  </CardBody>
-                </Card>
-              </FlexBlock>
-            </>
+            <FlexBlock key={post.node.id}>
+              <Card key={post.node.fields.slug}>
+                <CardImage>
+                  {post.node.frontmatter.featuredImage?.childImageSharp
+                    ?.fluid &&
+                    (console.log(post.node.frontmatter.featuredImage) || (
+                      <Img
+                        fluid={
+                          post.node.frontmatter.featuredImage.childImageSharp
+                            .fluid
+                        }
+                      />
+                    ))}
+                </CardImage>
+                <CardBody>
+                  <Link to={post.node.fields.slug} className="link-underline">
+                    <h3>{post.node.frontmatter.title}</h3>
+                  </Link>
+                  <p>{post.node.excerpt}</p>
+                  <Link to={post.node.fields.slug} className="link-button">
+                    View case study
+                  </Link>
+                </CardBody>
+              </Card>
+            </FlexBlock>
           ))}
         </Section>
-        <h3>Bio</h3>
+        <h3>Biography</h3>
         <Section>
           <BioContainer>
             <img src={avatarPath} alt="Benjamin Leeds Headshot" />
@@ -79,7 +83,7 @@ class Index extends React.Component {
 }
 
 const Section = styled.div`
-  margin: 20px -12px 60px;
+  margin: 20px -12px 120px;
   display: flex;
   flex-wrap: wrap;
 `;
@@ -98,8 +102,43 @@ const Card = styled.div`
   margin: 12px;
 `;
 
+const CardImage = styled.div`
+  img {
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+  }
+`;
+
 const CardBody = styled.div`
   padding: 24px;
+
+  p {
+    height: 240px;
+
+    @media screen and (min-width: 500px) {
+      height: 180px;
+    }
+  }
+
+  .link-button {
+    height: 42px;
+    color: ${theme.colors.primary};
+    border: 1px solid ${theme.colors.primary};
+    border-radius: ${theme.borderRadius};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+
+    :hover,
+    :active {
+      background: ${theme.colors.primary};
+      color: white;
+      text-decoration: none;
+    }
+  }
 `;
 
 const BioContainer = styled.div`
@@ -139,6 +178,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          id
           excerpt(format: PLAIN)
           fields {
             slug
@@ -147,6 +187,21 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM YYYY")
             tags
+            featuredImage {
+              childImageSharp {
+                fluid(maxHeight: 600, maxWidth: 800) {
+                  aspectRatio
+                  base64
+                  tracedSVG
+                  srcWebp
+                  srcSetWebp
+                  originalImg
+                  originalName
+                  presentationWidth
+                  presentationHeight
+                }
+              }
+            }
           }
         }
       }
