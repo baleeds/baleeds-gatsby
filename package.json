@@ -31,6 +31,7 @@
     "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.18",
     "gatsby-transformer-yaml": "^2.1.11",
+    "gh-pages": "^2.2.0",
     "glamor": "^2.20.40",
     "katex": "^0.10.1",
     "lodash": "^4.17.14",
@@ -53,7 +54,8 @@
     "develop": "gatsby develop",
     "build": "gatsby build",
     "start": "npm run develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "deploy": "gatsby build && gh-pages -d public"
   },
   "devDependencies": {
     "@types/styled-components": "^5.0.1"
