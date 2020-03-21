@@ -4,6 +4,7 @@ date: "2020-03-20"
 draft: false
 author: Benjamin Leeds
 featuredImage: login-render.png
+excerpt: Visdocs provides a structured way to document IT assets for rapid problem resolution.
 tags:
   - UX
   - Visual Design
@@ -11,8 +12,6 @@ tags:
 ---
 
 Managing IT assets is hard work, which means that troubleshooting IT mishaps is often a complicated mess. Visdocs provides a structured way to document networks, phone systems, servers and more, providing valuable insight to users.
-
-<!-- end -->
 
 ## The process
 

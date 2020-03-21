@@ -1,86 +1,90 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 // import Layout from "../layouts";
 import { Page } from "../layouts/Page";
 import styled from "styled-components";
 import { theme } from "../styles/theme";
 import Img from "gatsby-image";
 
-class Index extends React.Component {
-  render() {
-    const posts = this.props.data.allMarkdownRemark.edges;
-    const avatarPath = this.props.data.allAuthorYaml.edges[0].node.avatar
-      .childImageSharp.original.src;
+const Index: React.FC = () => {
+  const { allMarkdownRemark, allAuthorYaml } = useStaticQuery(pageQuery);
 
-    return (
-      <Page>
-        <Section style={{ margin: "120px 0" }}>
-          <h2>
-            {/* Life is simpler with thoughtful software. */}
-            Ben is a software designer and engineer. Currently creating useful
-            products at{" "}
-            <a href="https://level.tech/" target="blank">
-              Level Software
-            </a>
-            . Formerly at{" "}
-            <a href="https://www.db.com/company/index.htm" target="blank">
-              Deutsche Bank
-            </a>
-            .
-          </h2>
-        </Section>
-        <h3>Featured work</h3>
-        <Section>
-          {posts.map(post => (
-            <FlexBlock key={post.node.id}>
-              <Card key={post.node.fields.slug}>
+  const posts = allMarkdownRemark.edges;
+  const avatarPath =
+    allAuthorYaml.edges[0].node.avatar.childImageSharp.original.src;
+
+  return (
+    <Page>
+      <Section style={{ margin: "120px 0" }}>
+        <h2>
+          {/* Life is simpler with thoughtful software. */}
+          Ben is a software designer and engineer. Currently creating useful
+          products at{" "}
+          <a href="https://level.tech/" target="blank">
+            Level Software
+          </a>
+          . Formerly at{" "}
+          <a href="https://www.db.com/company/index.htm" target="blank">
+            Deutsche Bank
+          </a>
+          .
+        </h2>
+      </Section>
+      <h3>Featured work</h3>
+      <Section>
+        {posts.map(post => {
+          const {
+            id,
+            fields: { slug },
+            frontmatter: { featuredImage, title, excerpt }
+          } = post.node;
+
+          return (
+            <FlexBlock key={id}>
+              <Card key={slug}>
                 <CardImage>
-                  {post.node.frontmatter.featuredImage?.childImageSharp
-                    ?.fluid &&
-                    (console.log(post.node.frontmatter.featuredImage) || (
-                      <Img
-                        fluid={
-                          post.node.frontmatter.featuredImage.childImageSharp
-                            .fluid
-                        }
-                      />
-                    ))}
+                  {featuredImage && (
+                    <Img
+                      fluid={featuredImage.childImageSharp.fluid}
+                      alt={title}
+                    />
+                  )}
                 </CardImage>
                 <CardBody>
-                  <Link to={post.node.fields.slug} className="link-underline">
-                    <h3>{post.node.frontmatter.title}</h3>
+                  <Link to={slug} className="link-underline">
+                    <h3>{title}</h3>
                   </Link>
-                  <p>{post.node.excerpt}</p>
-                  <Link to={post.node.fields.slug} className="link-button">
+                  <p>{excerpt}</p>
+                  <Link to={slug} className="link-button">
                     View case study
                   </Link>
                 </CardBody>
               </Card>
             </FlexBlock>
-          ))}
-        </Section>
-        <h3>Biography</h3>
-        <Section>
-          <BioContainer>
-            <img src={avatarPath} alt="Benjamin Leeds Headshot" />
-            <div>
-              <p>
-                Benjamin grew up in Durham, NC. He recieved his Bachelor’s in
-                Computer Science from NC State University, while doing design
-                work for the Engineering College.
-              </p>
-              <p>
-                His career has been a blend of software engineering, user
-                research, and visual design. Recently he’s been focused on React
-                / Typescript development with GraphQL.
-              </p>
-            </div>
-          </BioContainer>
-        </Section>
-      </Page>
-    );
-  }
-}
+          );
+        })}
+      </Section>
+      <h3>Biography</h3>
+      <Section>
+        <BioContainer>
+          <img src={avatarPath} alt="Benjamin Leeds Headshot" />
+          <div>
+            <p>
+              Benjamin grew up in Durham, NC. He recieved his Bachelor’s in
+              Computer Science from NC State University, while doing design work
+              for the Engineering College.
+            </p>
+            <p>
+              His career has been a blend of software engineering, user
+              research, and visual design. Recently he’s been focused on React /
+              Typescript development with GraphQL.
+            </p>
+          </div>
+        </BioContainer>
+      </Section>
+    </Page>
+  );
+};
 
 const Section = styled.div`
   margin: 20px -12px 120px;
@@ -113,10 +117,10 @@ const CardBody = styled.div`
   padding: 24px;
 
   p {
-    height: 240px;
+    height: 120px;
 
     @media screen and (min-width: 500px) {
-      height: 180px;
+      height: 100px;
     }
   }
 
@@ -179,7 +183,6 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt(format: PLAIN)
           fields {
             slug
           }
@@ -187,18 +190,18 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM YYYY")
             tags
+            excerpt
             featuredImage {
               childImageSharp {
                 fluid(maxHeight: 600, maxWidth: 800) {
                   aspectRatio
+                  src
+                  srcSet
+                  sizes
                   base64
                   tracedSVG
                   srcWebp
                   srcSetWebp
-                  originalImg
-                  originalName
-                  presentationWidth
-                  presentationHeight
                 }
               }
             }

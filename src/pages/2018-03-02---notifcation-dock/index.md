@@ -4,6 +4,7 @@ date: "2018-03-02"
 draft: false
 author: Benjamin Leeds
 featuredImage: new-dock.png
+excerpt: Notification Dock is a platform-wide solution for notifying users from all of their applications.
 tags:
   - UX
   - Visual Design
@@ -11,8 +12,6 @@ tags:
 ---
 
 Notification Dock is a platform-wide solution for notifying users from all of their applications.  The primary goal is to unify notifications in a convenient and manageable tool.
-
-<!-- end -->
 
 ## The process
 
