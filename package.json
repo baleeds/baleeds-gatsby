@@ -55,7 +55,7 @@
     "build": "gatsby build",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "deploy": "gatsby build && gh-pages -d public"
+    "deploy": "mkdir -p docs && cp -a public/. docs/"
   },
   "devDependencies": {
     "@types/styled-components": "^5.0.1"
