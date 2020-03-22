@@ -13,13 +13,13 @@ tags:
 
 Managing IT assets is hard work, which means that troubleshooting IT mishaps is often a complicated mess. Visdocs provides a structured way to document networks, phone systems, servers and more, providing valuable insight to users.
 
-## The process
+## The Process
 
 As the founding UX and UI designer (and frontend engineer), my goal was to go from nothing to something game-changing. Working alongside experts and up-and-comers in the industry, we developed a feature-set to solve 3 primary problems, and then brought those features through wireframes, visual design, and technical implementation.
 
 ![](login-render.png) Visdocs' login screen
 
-## User research
+## User Research
 
 In order to begin designing a system that would structure complex documentation, I first needed to understand the subject.
 

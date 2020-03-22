@@ -21,7 +21,7 @@ As the lead UXD on the project, I took the Dock through the full UX design proce
 
 <figcaption>The redesigned notifcation dock.</figcaption>
 
-## User research
+## User Research
 
 The Dock was challenging because there was an existing user-base, but they were not the primary target audience, so I needed to balance their existing needs with the anticipated needs of the upcoming users.
 
@@ -59,7 +59,7 @@ After rearranging the notifications, I refined and condensed the controls on the
 
 <figcaption>Outlining the anatomy of each notification group.</figcaption>
 
-## High fidelity designs
+## High Fidelity Designs
 
 Following the wireframes, my plan was to put together a fully functional prototype, so I needed a high fidelity design to follow.  The design language is derived from a next generation concept for the Command Center, where users keep their relevant applications.
 
@@ -67,11 +67,11 @@ Following the wireframes, my plan was to put together a fully functional prototy
 
 <figcaption>High fidelity designs added extra visual cues to increase the usability of the Dock.</figcaption>
 
-## Creating a prototype
+## Creating a Prototype
 
 To facilitate user testing, I decided to create a full prototype, using mock data in an AngularJS application.  Essentially all major features were present and refined, although limited by lack of data services.
 
-## User testing
+## User Testing
 
 When testing users, we allowed them to explore the prototype on their own, then asked questions to lead them where we wanted, in order to observe their interactions.  Through this process, patterns emerged about desired changes and additions.
 
@@ -83,6 +83,6 @@ Some examples were:
 - Users want to forward notifications
 - Flag denotes priority, pin denotes "save for later"
 
-## Product results
+## Product Results
 
 The resulting Notification Dock is currently widely used by internal and external people across the platform.  As a result, applications can rely on this golden source system, instead of developing a derivative notification functionality, and users can quickly access notifications from all relevant sources.
