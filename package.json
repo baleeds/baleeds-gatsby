@@ -56,12 +56,17 @@
     "build": "gatsby build",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "deploy": "mkdir -p docs && cp -a public/. docs/"
+    "deploy": "gh-pages-deploy"
   },
   "devDependencies": {
     "@types/styled-components": "^5.0.1"
   },
   "resolutions": {
     "gatsby-plugin-manifest/sharp": "0.23.4"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "public",
+    "cname": "baleeds.com",
+    "commit": "deploy"
   }
 }
