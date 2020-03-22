@@ -17,8 +17,7 @@ const Index: React.FC = () => {
     <Page>
       <Section style={{ margin: "120px 0" }}>
         <h2>
-          {/* Life is simpler with thoughtful software. */}
-          Ben is a software designer and engineer. Currently creating useful
+          Ben is a software engineer and designer. Currently creating useful
           products at{" "}
           <a href="https://level.tech/" target="blank">
             Level Software
@@ -177,7 +176,7 @@ export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       limit: 2000
-      sort: { fields: [frontmatter___date], order: ASC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { draft: { ne: true } } }
     ) {
       edges {
