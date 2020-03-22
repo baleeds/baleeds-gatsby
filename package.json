@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-example-using-remark",
+  "name": "baleeds-gatsby",
   "private": true,
-  "description": "Gatsby example site that demonstrates gatsby-transformer-remark and its plugins.",
+  "description": "Portofio site - powered by gatsby",
   "version": "1.0.0",
-  "author": "Florian Kissling <sechskilo@gmail.com>",
+  "author": "Benjamin Leeds <b.a.leeds@gmail.com>",
   "dependencies": {
     "babel-plugin-lodash": "^3.2.11",
     "babel-plugin-styled-components": "^1.10.7",
