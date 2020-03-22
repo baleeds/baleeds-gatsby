@@ -13,6 +13,7 @@
     "gatsby-image": "^2.3.0",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-glamor": "^2.0.9",
+    "gatsby-plugin-manifest": "^2.3.1",
     "gatsby-plugin-sharp": "^2.0.35",
     "gatsby-plugin-styled-components": "^3.2.0",
     "gatsby-plugin-typescript": "^2.3.0",
@@ -59,5 +60,8 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.0.1"
+  },
+  "resolutions": {
+    "gatsby-plugin-manifest/sharp": "0.23.4"
   }
 }
