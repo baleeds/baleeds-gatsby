@@ -3,7 +3,8 @@ module.exports = {
     title: `Benjamin Leeds - UX | Engineering`,
     author: `Benjamin Leeds`,
     description: `Benjamin Leeds is a software engineer and user experience designer.`,
-    homepage: `https://baleeds.com`
+    // homepage: `https://baleeds.com`
+    homepage: "https://baleeds.github.io/baleeds-gatsby"
   },
   mapping: {
     "MarkdownRemark.frontmatter.author": `AuthorYaml`
