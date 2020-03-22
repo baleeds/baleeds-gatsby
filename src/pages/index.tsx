@@ -43,10 +43,12 @@ const Index: React.FC = () => {
               <Card key={slug}>
                 <CardImage>
                   {featuredImage && (
-                    <Img
-                      fluid={featuredImage.childImageSharp.fluid}
-                      alt={title}
-                    />
+                    <Link to={slug}>
+                      <Img
+                        fluid={featuredImage.childImageSharp.fluid}
+                        alt={title}
+                      />
+                    </Link>
                   )}
                 </CardImage>
                 <CardBody>
