@@ -10,9 +10,10 @@ const Index: React.FC = () => {
   const { allMarkdownRemark, allAuthorYaml } = useStaticQuery(pageQuery);
 
   const posts = allMarkdownRemark.edges;
-  const avatarPath =
-    allAuthorYaml.edges[0].node.avatar.childImageSharp.original.src;
+  const avatarImageFluid =
+    allAuthorYaml.edges[0].node.avatar.childImageSharp.fluid;
 
+  console.log(avatarImageFluid);
   return (
     <Page>
       <SEO title="Benjamin Leeds | Software Engineer and Designer in Asheville, NC" />
@@ -69,7 +70,9 @@ const Index: React.FC = () => {
       <h3>Biography</h3>
       <Section>
         <BioContainer>
-          <img src={avatarPath} alt="Benjamin Leeds Headshot" />
+          <BioImage>
+            <Img fluid={avatarImageFluid} alt="Benjamin Leeds Headshot" />
+          </BioImage>
           <div>
             <p>
               Benjamin grew up in Durham, NC. He recieved his Bachelor’s in
@@ -154,23 +157,27 @@ const BioContainer = styled.div`
   align-items: center;
   margin: 12px;
 
-  img {
-    margin: 12px;
-    margin-bottom: 40px;
-    box-shadow: ${theme.shadow};
-    border-radius: ${theme.borderRadius};
-    width: 100%;
-  }
-
   @media screen and (min-width: 500px) {
     margin: 0;
     flex-direction: row;
+  }
+`;
 
-    img {
-      margin-right: 40px;
-      width: 200px;
-      margin-bottom: 0;
-    }
+const BioImage = styled.div`
+  margin: 12px;
+  margin-bottom: 40px;
+  box-shadow: ${theme.shadow};
+  width: 100%;
+
+  img {
+    border-radius: ${theme.borderRadius};
+  }
+
+  @media screen and (min-width: 500px) {
+    margin-right: 40px;
+    width: 30%;
+    flex-shrink: 0;
+    margin-bottom: 12px;
   }
 `;
 
@@ -214,10 +221,14 @@ export const pageQuery = graphql`
         node {
           avatar {
             childImageSharp {
-              original {
-                width
-                height
+              fluid(maxWidth: 600) {
+                aspectRatio
                 src
+                srcSet
+                sizes
+                base64
+                srcWebp
+                srcSetWebp
               }
             }
           }
