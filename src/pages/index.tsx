@@ -194,13 +194,12 @@ export const pageQuery = graphql`
             excerpt
             featuredImage {
               childImageSharp {
-                fluid(maxHeight: 600, maxWidth: 800) {
+                fluid(maxHeight: 600, maxWidth: 800, quality: 80) {
                   aspectRatio
                   src
                   srcSet
                   sizes
                   base64
-                  tracedSVG
                   srcWebp
                   srcSetWebp
                 }

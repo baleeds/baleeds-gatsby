@@ -25,15 +25,14 @@ module.exports = {
         commonmark: true,
         footnotes: true,
         pedantic: true,
-        // blocks: ["h2"], Blocks option value can be provided here as an array.
         excerpt_separator: `<!-- end -->`,
         plugins: [
           `gatsby-remark-unwrap-images`,
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 900
-              // wrapperStyle: () => `margin: unset`
+              maxWidth: 900,
+              quality: 80
             }
           },
           {
