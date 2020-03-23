@@ -13,7 +13,6 @@ const Index: React.FC = () => {
   const avatarImageFluid =
     allAuthorYaml.edges[0].node.avatar.childImageSharp.fluid;
 
-  console.log(avatarImageFluid);
   return (
     <Page>
       <SEO title="Benjamin Leeds | Software Engineer and Designer in Asheville, NC" />
