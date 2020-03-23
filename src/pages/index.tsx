@@ -18,7 +18,7 @@ const Index: React.FC = () => {
       <SEO title="Benjamin Leeds | Software Engineer and Designer in Asheville, NC" />
       <Section style={{ margin: "120px 0" }}>
         <h2>
-          Ben is a software engineer and designer. Currently creating useful
+          Ben is a software engineer and designer. Currently building useful
           products at{" "}
           <a href="https://level.tech/" target="blank">
             Level Software
