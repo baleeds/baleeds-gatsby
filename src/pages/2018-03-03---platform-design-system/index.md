@@ -4,7 +4,7 @@ date: "2018-03-03"
 draft: false
 author: Benjamin Leeds
 featuredImage: exploratory-designs-1.png
-excerpt: The platform design system seeks to add consistency to all apps across the platform, in both visual styling and user experience.
+excerpt: Platform Design System seeks to add consistency to all apps across the platform, in both visual styling and user experience.
 tags:
   - Visual Design
   - Research
