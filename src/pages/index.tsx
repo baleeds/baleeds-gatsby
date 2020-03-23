@@ -85,6 +85,11 @@ const Index: React.FC = () => {
               research, and visual design. Recently he’s been focused on React /
               Typescript development with GraphQL.
             </p>
+            <p>
+              <a href="/resume-2020.pdf" target="blank">
+                View resumé &rarr;
+              </a>
+            </p>
           </div>
         </BioContainer>
       </Section>
