@@ -49,11 +49,18 @@ p {
   margin-bottom: 12px !important;
 }
 
-ul li {
-  list-style: inside;
+ul,
+ol {
+  padding-left: 24px;
+}
+
+ul li,
+ol li {
+  list-style: outside;
   font-size: 0.875em;
   font-weight: normal;
   line-height: 1.8em;
+  margin-bottom: 12px;
 }
 
 a {
@@ -63,6 +70,15 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+figcaption {
+  margin-top: -20px;
+  opacity: 0.6;
+  font-size: 0.8em;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.3em;
 }
 
 .text-block {
@@ -94,12 +110,4 @@ a:hover {
 
 .formatted {
   margin-bottom: 200px;
-}
-
-.formatted figcaption {
-  margin-top: -20px;
-  opacity: 0.6;
-  font-size: 0.8em;
-  text-align: center;
-  font-style: italic;
 }
