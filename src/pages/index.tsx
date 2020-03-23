@@ -4,7 +4,7 @@ import { Page } from "../layouts/Page";
 import styled from "styled-components";
 import { theme } from "../styles/theme";
 import Img from "gatsby-image";
-import { SEO } from "../components/Seo";
+import { SEO } from "../components/SEO";
 
 const Index: React.FC = () => {
   const { allMarkdownRemark, allAuthorYaml } = useStaticQuery(pageQuery);

@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import rehypeReact from "rehype-react";
 import { Page } from "../layouts/Page";
-import { SEO } from "../components/Seo";
+import { SEO } from "../components/SEO";
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,

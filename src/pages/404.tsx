@@ -1,7 +1,7 @@
 import React from "react";
 import { Page } from "../layouts/Page";
 import styled from "styled-components";
-import { SEO } from "../components/Seo";
+import { SEO } from "../components/SEO";
 
 const Index: React.FC = () => {
   return (
