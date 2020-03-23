@@ -1,10 +1,10 @@
 import React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
-// import Layout from "../layouts";
 import { Page } from "../layouts/Page";
 import styled from "styled-components";
 import { theme } from "../styles/theme";
 import Img from "gatsby-image";
+import { SEO } from "../components/Seo";
 
 const Index: React.FC = () => {
   const { allMarkdownRemark, allAuthorYaml } = useStaticQuery(pageQuery);
@@ -15,6 +15,7 @@ const Index: React.FC = () => {
 
   return (
     <Page>
+      <SEO title="Benjamin Leeds | Software Engineer and Designer in Asheville, NC" />
       <Section style={{ margin: "120px 0" }}>
         <h2>
           Ben is a software engineer and designer. Currently creating useful
@@ -73,7 +74,8 @@ const Index: React.FC = () => {
             <p>
               Benjamin grew up in Durham, NC. He recieved his Bachelor’s in
               Computer Science from NC State University, while doing design work
-              for the Engineering College.
+              for the Engineering College. In 2018, him and his wife Erica moved
+              to Asheville, NC.
             </p>
             <p>
               His career has been a blend of software engineering, user

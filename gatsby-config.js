@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Benjamin Leeds - UX | Engineering`,
+    title: `Benjamin Leeds`,
+    description: `Benjamin Leeds is a software engineer and user experience designer.  Currently building useful products at Level Software.  Formerly at Deutsche Bank.`,
     author: `Benjamin Leeds`,
-    description: `Benjamin Leeds is a software engineer and user experience designer.`,
     homepage: `https://baleeds.com`
   },
   mapping: {
