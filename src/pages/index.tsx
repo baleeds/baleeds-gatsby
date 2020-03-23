@@ -172,8 +172,6 @@ const BioContainer = styled.div`
   }
 `;
 
-export default Index;
-
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
@@ -227,3 +225,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default Index;
