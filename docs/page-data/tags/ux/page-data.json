@@ -1,1 +1,0 @@
-{"componentChunkName":"component---src-templates-template-tag-page-js","path":"/tags/ux/","result":{"data":{"allMarkdownRemark":{"totalCount":2,"edges":[{"node":{"fields":{"slug":"/visdocs/"},"frontmatter":{"title":"Visdocs"}}},{"node":{"fields":{"slug":"/notifcation-dock/"},"frontmatter":{"title":"Notification Dock"}}}]}},"pageContext":{"tag":"UX"}}}

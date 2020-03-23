@@ -49,17 +49,8 @@ module.exports = {
               dashes: `oldschool`
             }
           },
-          {
-            resolve: `gatsby-remark-embed-snippet`,
-            options: {
-              // Example code links are relative to this dir.
-              directory: `${__dirname}/src/code-examples/`
-            }
-          },
           `gatsby-remark-autolink-headers`,
-          `gatsby-remark-graphviz`, // graphviz before prismjs
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-katex`
+          `gatsby-remark-prismjs`
         ]
       }
     },
@@ -72,7 +63,6 @@ module.exports = {
         excludeRegex: /excluded-link/
       }
     },
-    `gatsby-plugin-glamor`,
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {

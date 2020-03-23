@@ -3,3 +3,4 @@
 - 404 page
 - Tags page
 - Resume link?
+- Page titles
