@@ -1,8 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { useStaticQuery, graphql } from "gatsby";
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
+import React from 'react';
+import styled from 'styled-components';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 export const Page: React.FC = ({ children }) => {
   return (

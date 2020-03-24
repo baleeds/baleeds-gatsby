@@ -1,6 +1,6 @@
 ---
-title: "Platform Design System"
-date: "2018-03-03"
+title: 'Platform Design System'
+date: '2018-03-03'
 draft: false
 author: Benjamin Leeds
 featuredImage: exploratory-designs-1.png

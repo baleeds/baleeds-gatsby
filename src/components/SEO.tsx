@@ -1,6 +1,6 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
+import React from 'react';
+import Helmet from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
 interface Meta {
   name: string;
@@ -19,7 +19,7 @@ export const SEO: React.FC<Props> = ({
   description,
   lang,
   meta = [],
-  title
+  title,
 }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -41,7 +41,7 @@ export const SEO: React.FC<Props> = ({
   return (
     <Helmet
       htmlAttributes={{
-        lang
+        lang,
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
@@ -49,36 +49,36 @@ export const SEO: React.FC<Props> = ({
       meta={[
         {
           name: `description`,
-          content: metaDescription
+          content: metaDescription,
         },
         {
           property: `og:title`,
-          content: metaTitle
+          content: metaTitle,
         },
         {
           property: `og:description`,
-          content: metaDescription
+          content: metaDescription,
         },
         {
           property: `og:type`,
-          content: `website`
+          content: `website`,
         },
         {
           name: `twitter:card`,
-          content: `summary`
+          content: `summary`,
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author
+          content: site.siteMetadata.author,
         },
         {
           name: `twitter:title`,
-          content: metaTitle
+          content: metaTitle,
         },
         {
           name: `twitter:description`,
-          content: metaDescription
-        }
+          content: metaDescription,
+        },
       ].concat(meta)}
     />
   );

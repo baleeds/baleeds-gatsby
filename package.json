@@ -1,8 +1,7 @@
 {
   "name": "baleeds-gatsby",
-  "private": true,
-  "description": "Portofio site - powered by gatsby",
-  "version": "1.0.0",
+  "description": "baleeds.com - Powered by Gatsby",
+  "version": "1.1.0",
   "author": "Benjamin Leeds <b.a.leeds@gmail.com>",
   "dependencies": {
     "babel-plugin-lodash": "^3.2.11",
@@ -49,10 +48,31 @@
     "build": "gatsby build",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "deploy": "gh-pages -d public"
+    "deploy": "gh-pages -d public",
+    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
+    "format": "prettier --write \"**/*.{js,jsx,json,md,css}\"",
+    "clean": "gatsby clean"
   },
   "devDependencies": {
+    "@types/node": "^13.1.4",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
     "@types/react-helmet": "^5.0.15",
-    "@types/styled-components": "^5.0.1"
+    "@types/styled-components": "^5.0.1",
+    "@typescript-eslint/eslint-plugin": "^2.14.0",
+    "@typescript-eslint/parser": "^2.14.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.17.0",
+    "prettier": "^2.0.2",
+    "typescript": "^3.7.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baleeds/baleeds-gatsby"
+  },
+  "bugs": {
+    "url": "https://github.com/baleeds/baleeds-gatsby/issues"
   }
 }

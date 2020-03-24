@@ -1,8 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { theme } from "../styles/theme";
-import { Brand } from "./Brand";
-import { Socials } from "./Socials";
+import React from 'react';
+import styled from 'styled-components';
+import { theme } from '../styles/theme';
+import { Socials } from './Socials';
 
 export const Footer: React.FC = () => {
   return (

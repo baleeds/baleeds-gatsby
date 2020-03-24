@@ -1,10 +1,10 @@
-import React from "react";
-import { Link, graphql, useStaticQuery } from "gatsby";
-import { Page } from "../layouts/Page";
-import styled from "styled-components";
-import { theme } from "../styles/theme";
-import Img from "gatsby-image";
-import { SEO } from "../components/SEO";
+import React from 'react';
+import { Link, graphql, useStaticQuery } from 'gatsby';
+import { Page } from '../layouts/Page';
+import styled from 'styled-components';
+import { theme } from '../styles/theme';
+import Img from 'gatsby-image';
+import { SEO } from '../components/SEO';
 
 const sportEmojis = [`🏓`, `🏀`, `🏐`];
 const hobbyEmojis = [`🏞`, `📷`, `🎧`];
@@ -22,7 +22,7 @@ const Index: React.FC = () => {
   return (
     <Page>
       <SEO title="Benjamin Leeds | Software Engineer and Designer in Asheville, NC" />
-      <Section style={{ margin: "120px 0" }}>
+      <Section style={{ margin: '120px 0' }}>
         <Emojis>
           <div className="fadeUp delay-1">👋</div>
           <div className="fadeUp delay-2">{hobbyEmoji}</div>
@@ -30,11 +30,11 @@ const Index: React.FC = () => {
         </Emojis>
         <h2>
           Ben is a software engineer and designer. Currently building useful
-          products at{" "}
+          products at{' '}
           <a href="https://level.tech/" target="blank">
             Level Software
           </a>
-          . Formerly at{" "}
+          . Formerly at{' '}
           <a href="https://www.db.com/company/index.htm" target="blank">
             Deutsche Bank
           </a>
@@ -43,11 +43,11 @@ const Index: React.FC = () => {
       </Section>
       <h3>Featured work</h3>
       <Section>
-        {posts.map(post => {
+        {posts.map((post) => {
           const {
             id,
             fields: { slug },
-            frontmatter: { featuredImage, title, excerpt }
+            frontmatter: { featuredImage, title, excerpt },
           } = post.node;
 
           return (
