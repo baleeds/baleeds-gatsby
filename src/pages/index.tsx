@@ -87,7 +87,7 @@ const Index: React.FC = () => {
             <p>
               Benjamin grew up in Durham, NC. He recieved his Bachelor’s in
               Computer Science from NC State University, while doing design work
-              for the Engineering College. In 2018, him and his wife Erica moved
+              for the Engineering College. In 2018, he and his wife Erica moved
               to Asheville, NC.
             </p>
             <p>
