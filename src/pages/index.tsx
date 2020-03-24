@@ -85,7 +85,7 @@ const Index: React.FC = () => {
           </BioImage>
           <div>
             <p>
-              Benjamin grew up in Durham, NC. He recieved his Bachelor’s in
+              Benjamin grew up in Durham, NC. He received his Bachelor’s in
               Computer Science from NC State University, while doing design work
               for the Engineering College. In 2018, he and his wife Erica moved
               to Asheville, NC.

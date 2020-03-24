@@ -79,7 +79,7 @@ The primary decision to be made was how templates are applied to assets. We came
 
 <figcaption>Matrix to decide how templates relate to assets.</figcaption>
 
-To solve this problem, I looked at competitors, modelled real assets and their ideal templates to determine viability, and talked to users about which solution was most intuitive.
+To solve this problem, I looked at competitors, modeled real assets and their ideal templates to determine viability, and talked to users about which solution was most intuitive.
 
 Research indicated issues around assets having multiple templates, where more than one template specified the same field, or worse, different fields intending to represent the same data.
 
