@@ -111,3 +111,33 @@ figcaption {
 .formatted {
   margin-bottom: 200px;
 }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.fadeUp {
+  animation-name: fadeUp;
+  animation-duration: 200ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+.delay-1 {
+  animation-delay: 500ms;
+}
+
+.delay-2 {
+  animation-delay: 600ms;
+}
+
+.delay-3 {
+  animation-delay: 700ms;
+}

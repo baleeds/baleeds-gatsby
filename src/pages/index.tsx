@@ -6,8 +6,14 @@ import { theme } from "../styles/theme";
 import Img from "gatsby-image";
 import { SEO } from "../components/SEO";
 
+const sportEmojis = [`🏓`, `🏀`, `🏐`];
+const hobbyEmojis = [`🏞`, `📷`, `🎧`];
+
 const Index: React.FC = () => {
   const { allMarkdownRemark, allAuthorYaml } = useStaticQuery(pageQuery);
+
+  const sportEmoji = sportEmojis[Math.round(Math.random() * 2)];
+  const hobbyEmoji = hobbyEmojis[Math.round(Math.random() * 2)];
 
   const posts = allMarkdownRemark.edges;
   const avatarImageFluid =
@@ -17,7 +23,11 @@ const Index: React.FC = () => {
     <Page>
       <SEO title="Benjamin Leeds | Software Engineer and Designer in Asheville, NC" />
       <Section style={{ margin: "120px 0" }}>
-        <h1>👋 🏞️ 🏓</h1>
+        <Emojis>
+          <div className="fadeUp delay-1">👋</div>
+          <div className="fadeUp delay-2">{hobbyEmoji}</div>
+          <div className="fadeUp delay-3">{sportEmoji}</div>
+        </Emojis>
         <h2>
           Ben is a software engineer and designer. Currently building useful
           products at{" "}
@@ -101,6 +111,14 @@ const Section = styled.div`
   margin: 20px -12px 120px;
   display: flex;
   flex-wrap: wrap;
+`;
+
+const Emojis = styled.h1`
+  display: flex;
+
+  & div + div {
+    margin-left: 8px;
+  }
 `;
 
 const FlexBlock = styled.div`
